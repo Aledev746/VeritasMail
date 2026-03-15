@@ -87,7 +87,7 @@ function tryGetEmailData(tabId) {
  */
 async function callAnalyzeApi(payload, apiKey) {
   const url = `${API_BASE}/analyze`;
-  const isPlaceholder = API_BASE.includes('api.example.com');
+  const isPlaceholder = API_BASE === 'https://api.example.com';
 
   if (isPlaceholder || !apiKey) {
     return getMockResult(payload);

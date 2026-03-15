@@ -31,7 +31,7 @@ L’estensione si installa in modalità **unpacked** (sviluppo o uso interno).
 1. Apri Chrome e vai a **`chrome://extensions/`**.
 2. Abilita **Modalità sviluppatore** (interruttore in alto a destra).
 3. Clicca **Carica estensione non pacchettizzata**.
-4. Seleziona la cartella **`veritasmail`** (la directory che contiene `manifest.json`).
+4. Seleziona la cartella radice del repository **`VeritasMail`** (la directory che contiene `manifest.json`).
 5. VeritasMail apparirà nell’elenco; opzionalmente, fissala nella barra degli strumenti per accedere rapidamente all’icona.
 
 Dopo aver aggiornato l’estensione da codice, ricaricarla da `chrome://extensions/` e, se necessario, ricaricare la scheda Gmail.
@@ -82,7 +82,7 @@ In assenza di API key o con endpoint placeholder, l’estensione restituisce un 
 ## Architettura e struttura file
 
 ```
-veritasmail/
+VeritasMail/
 ├── manifest.json       # Configurazione MV3, permessi, content script, action
 ├── background.js       # Service worker: messaggi, orchestrazione, chiamate API
 ├── content.js          # Estrazione dati da Gmail (from, subject, bodyPreview)
@@ -91,6 +91,7 @@ veritasmail/
 ├── popup.css            # Stili della dashboard
 ├── Logo/
 │   └── Logo.png        # Logo e icone estensione (16, 48, 128 px scalati da Chrome)
+├── icons/              # Icone in varie risoluzioni
 └── README.md
 ```
 
@@ -103,7 +104,7 @@ veritasmail/
 
 ### Verifica rapida
 
-1. Caricare l’estensione dalla cartella `veritasmail` (vedi [Installazione](#installazione)).
+1. Caricare l’estensione dalla cartella radice del repository `VeritasMail` (vedi [Installazione](#installazione)).
 2. Aprire Gmail, aprire un’email, cliccare l’icona VeritasMail e **Analizza email**.
 3. Controllare che vengano mostrati report e consigli (anche in modalità mock).
 
