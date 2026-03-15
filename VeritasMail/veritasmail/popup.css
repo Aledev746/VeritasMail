@@ -1,0 +1,227 @@
+/* VeritasMail Dashboard — custom styles, popup-sized, accessible */
+
+:root {
+  --bg: #0f1419;
+  --surface: #1a2332;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --success: #3fb950;
+  --warning: #d29922;
+  --danger: #f85149;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  margin: 0;
+  min-width: 320px;
+  max-width: 380px;
+  min-height: 200px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.header-icon {
+  flex-shrink: 0;
+  display: block;
+  object-fit: contain;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.main {
+  padding: 16px;
+}
+
+.state {
+  margin: 0;
+}
+
+.state[hidden] {
+  display: none !important;
+}
+
+.state-empty p,
+.state-loading .loading-text,
+.state-error p {
+  color: var(--text-muted);
+  margin: 0 0 12px 0;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-small {
+  padding: 4px 10px;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.state-loading .loading-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.state-loading .loading-text::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text-muted);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.state-error {
+  color: var(--danger);
+}
+
+.state-error p {
+  color: var(--danger);
+}
+
+.report-section,
+.tips-section {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+}
+
+.report-section h2,
+.tips-section h2 {
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.level-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.level-badge.level-low {
+  background: rgba(63, 185, 80, 0.2);
+  color: var(--success);
+}
+
+.level-badge.level-medium {
+  background: rgba(210, 153, 34, 0.2);
+  color: var(--warning);
+}
+
+.level-badge.level-high {
+  background: rgba(248, 81, 73, 0.2);
+  color: var(--danger);
+}
+
+.red-flags,
+.tips-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+
+.red-flags li,
+.tips-list li {
+  margin-bottom: 6px;
+}
+
+#btn-analyze-again {
+  margin-top: 8px;
+}
+
+.footer {
+  padding: 8px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--surface);
+}
+
+.settings summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.settings label {
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
+  color: var(--text-muted);
+}
+
+.settings #api-key {
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.settings #api-key::placeholder {
+  color: var(--text-muted);
+}
+
+.settings summary:hover {
+  color: var(--text);
+}

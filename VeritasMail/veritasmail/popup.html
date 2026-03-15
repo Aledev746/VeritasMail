@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeritasMail Dashboard</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="icons/icona 48x48.png" alt="" class="header-icon" width="28" height="28" aria-hidden="true" />
+    <h1>VeritasMail Dashboard</h1>
+  </header>
+
+  <main class="main">
+    <section id="state-empty" class="state state-empty" aria-live="polite">
+      <p>Apri un'email in Gmail e clicca "Analizza" per verificare possibili rischi phishing.</p>
+      <button id="btn-analyze" type="button" class="btn btn-primary">Analizza email</button>
+    </section>
+
+    <section id="state-loading" class="state state-loading" hidden aria-live="polite">
+      <p class="loading-text">Analisi in corso…</p>
+    </section>
+
+    <section id="state-error" class="state state-error" hidden aria-live="assertive">
+      <p id="error-message"></p>
+      <button id="btn-retry" type="button" class="btn btn-secondary">Riprova</button>
+    </section>
+
+    <section id="state-report" class="state state-report" hidden aria-live="polite">
+      <div class="report-section">
+        <h2>Report di Analisi Phishing</h2>
+        <div class="level-badge" id="level-badge"></div>
+        <ul class="red-flags" id="red-flags"></ul>
+      </div>
+      <div class="tips-section">
+        <h2>Educazione & Prevenzione</h2>
+        <ul class="tips-list" id="tips-list"></ul>
+      </div>
+      <button id="btn-analyze-again" type="button" class="btn btn-secondary">Analizza di nuovo</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <details class="settings">
+      <summary>Impostazioni</summary>
+      <label for="api-key">API key (opzionale)</label>
+      <input type="password" id="api-key" placeholder="Inserisci API key" autocomplete="off" />
+      <button id="btn-save-key" type="button" class="btn btn-small">Salva</button>
+    </details>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
